@@ -750,7 +750,7 @@ i {
 	overflow-y: hidden;
 	overflow-x: auto;
 	gap: 20px;
-	padding: 20px 0 40px 20px;
+	padding: 20px 40px;
 	max-width: 100%;
 	scrollbar-width: thin;
 	scrollbar-color: #888 #141414;
@@ -794,8 +794,9 @@ i {
 	border-radius: 6px 6px 0 0;
 }
 
-.project-cards-image:hover {
-	transform: scale(0.98);
+.project-cards:hover {
+	transition: transform 0.3s;
+	transform: scale(1.02);
 }
 
 .category {
