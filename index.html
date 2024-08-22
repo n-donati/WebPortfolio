@@ -64,9 +64,9 @@
                 <h2 class="content__title"><i>About</i> Me</h2>
                 <p class="content__text text-meta" style="text-align: justify;">I'm a Software Engineer who crafts elegant solutions using diverse technologies. I've tackled complex challenges with global teams, consistently delivering exceptional results and striving to set new industry standards.</p>
                 <a href="media/NicolasDonati_CV.pdf" download="Nicolas_Donati_CV.pdf">
-					<button class="cv-button">
+					<button class="fancy-button">
 						Download CV
-						<div class="cv-hoverEffect">
+						<div class="fancy-button-hover-effect">
 							<div></div>
 						</div>
 					</button>
@@ -97,14 +97,14 @@
             </section>
 
             <section class="content content--sticky content--half bg-3">
-                <img class="content__img content__img--small" src="media/img/4.png" alt="Projects">
-                <h2 class="content__title"><i>My</i> Projects</h2>
-                <p class="content__text text-meta" >Crafting projects with purpose that embody my journey and dedication through hands-on experience and continuous learning.</p>
-                <div class="project-cards-grid">
-                    <div class="project-cards">
+				<img class="content__img content__img--small" src="media/img/4.png" alt="Projects">
+				<h2 class="content__title"><i>My</i> Projects</h2>
+				<p class="content__text text-meta">Crafting projects with purpose that embody my journey and dedication through hands-on experience and continuous learning.</p>
+				<div class="project-cards-grid">
+					<div class="project-cards">
 						<img class="project-cards-image" src="/media/img/a-min.png">
 						<div class="category">Donatti Co</div>
-						<div class="project-cards-heading"> A startup developing AI solutions for the industry.
+						<div class="project-cards-heading"> My startup developing AI solutions for the industry.
 							<div class="author">
 								<a href="https://" target="_blank" title="" alt="">
 									<img src="media/logos/REPOSITORY.svg" style="width: 25px; height: 25px; vertical-align: middle;" class="repository">
@@ -130,7 +130,7 @@
 					<div class="project-cards">
 						<img class="project-cards-image" src="/media/img/c-min.png">
 						<div class="category">RS Networks</div>
-						<div class="project-cards-heading"> Pioneering resources for smart communication & connectivity.
+						<div class="project-cards-heading"> Pioneering resources for smart communication.
 							<div class="author">
 								<a href="https://" target="_blank" title="" alt="">
 									<img src="media/logos/REPOSITORY.svg" style="width: 25px; height: auto; vertical-align: middle;" class="repository">
@@ -140,8 +140,8 @@
 							</div>
 						</div>
 					</div>
-                </div>
-            </section>
+				</div>
+			</section>
 
             <section class="content content--sticky content--half bg-4">
                 <img class="content__img content__img--small" src="media/img/5.png" alt="Skills">
@@ -159,19 +159,63 @@
             </section>
 			
             <section class="content content--sticky content--half bg-5">
-                <img class="content__img content__img--small" src="media/img/3.png" alt="Publications">
-                <h2 class="content__title"><i></i>Publications</h2>
-                <p class="content__text content__text--narrow text-meta">I am working on them...</p>
-            </section>
+				<img class="content__img content__img--small" src="media/img/3.png" alt="Publications">
+				<h2 class="content__title"><i>My</i> Publications</h2>
+				<p class="content__text text-meta">Each piece reflects my passion for technology and continuous learning.</p>
+				<ul class="publications-list">
+					<li class="publication-item">
+						<span class="publication-date">04 Apr 2024</span>
+						<a href="#" class="publication-title">Inversion of Control (IoC): Demystifying the Familiar Pattern</a>
+					</li>
+					<li class="publication-item">
+						<span class="publication-date">09 Feb 2024</span>
+						<a href="#" class="publication-title">OAuth Terms Explained in One Sentence</a>
+					</li>
+					<li class="publication-item">
+						<span class="publication-date">15 Dec 2023</span>
+						<a href="#" class="publication-title">Scaling Cheer: A Deep Dive into the Architecture of Red Jingles AI Chatbot</a>
+					</li>
+				</ul>
+			</section>
 			
             <section class="content content--sticky content--half bg-6">
 				<img class="content__img content__img--small" src="media/img/6.png" alt="Contact">
 				<h2 class="content__title"><i>Contact</i> Me</h2>
-				<p class="content__text text-small">Have a project in mind?<br>Reach out and we can collaborate.</p>
 				
+				<form id="contact-form" class="contact-form">
+					<div class="form-group">
+						<input type="text" id="name" name="name" placeholder=" " required>
+						<label for="name">Your Name</label>
+					</div>
+					<div class="form-group">
+						<input type="email" id="email" name="email" placeholder=" " required>
+						<label for="email">Your Email</label>
+					</div>
+					<div class="form-group">
+						<textarea id="message" name="message" placeholder=" " required></textarea>
+						<label for="message">Your Message</label>
+					</div>
+					<button type="submit" class="fancy-button">
+						Send Message
+						<div class="fancy-button-hover-effect">
+							<div></div>
+						</div>
+					</button>
+				</form>
+				
+				<div id="loading" class="loading-overlay" style="display: none;">
+					<div class="spinner"></div>
+				</div>
 			</section>
+
+			<div id="success-message" class="success-message" style="display: none;">
+				<div class="success-icon">✓</div>
+				<p>Message sent!</p>
+				<button class="close-btn">&times;</button>
+			</div>
 			
         </div>
+		
 
         <div class="content content--highlight content--outro">
             <blockquote class="text-medium">
