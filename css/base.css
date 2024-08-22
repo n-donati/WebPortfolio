@@ -563,7 +563,6 @@ i {
     font-weight: bold;
     color: rgb(14, 14, 14);
     z-index: 0;
-    box-shadow: 0 0 7px -5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
