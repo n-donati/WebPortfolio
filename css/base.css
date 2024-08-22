@@ -563,21 +563,16 @@ i {
     font-weight: bold;
     color: rgb(14, 14, 14);
     z-index: 0;
+    box-shadow: 0 0 7px -5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
 }
 
-.fancy-button:hover,
-.fancy-button:focus,
-.fancy-button:active,
-.fancy-button.touch-active {
+.fancy-button:hover {
     background: rgb(193, 228, 248);
     color: rgb(33, 0, 85);
-    outline: none;
 }
 
-.fancy-button:active,
-.fancy-button.touch-active {
+.fancy-button:active {
     transform: scale(0.97);
 }
 
@@ -601,10 +596,7 @@ i {
     opacity: 0.5;
 }
 
-.fancy-button:hover .fancy-button-hover-effect div,
-.fancy-button:focus .fancy-button-hover-effect div,
-.fancy-button:active .fancy-button-hover-effect div,
-.fancy-button.touch-active .fancy-button-hover-effect div {
+.fancy-button:hover .fancy-button-hover-effect div {
     width: 8rem;
     height: 8rem;
 }
