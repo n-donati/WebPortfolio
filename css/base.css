@@ -1041,7 +1041,7 @@ i {
 }
 
 /* Fancy Button */
-.fancy-button {
+button.fancy-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1057,14 +1057,17 @@ i {
     z-index: 0;
     box-shadow: 0 0 7px -5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    background: transparent;
+	background: rgb(193, 228, 248);
 }
 
-.fancy-button:hover {
-    background: rgb(193, 228, 248);
-    color: rgb(33, 0, 85);
+button.fancy-button:hover {
+	transition: all 0.5s;
+	background: rgba(193, 228, 248, 0);
+	color: rgb(255, 255, 255);
 }
 
-.fancy-button:active {
+button.fancy-button:active {
     transform: scale(0.97);
 }
 
@@ -1088,13 +1091,16 @@ i {
     opacity: 0.5;
 }
 
-.fancy-button:hover .fancy-button-hover-effect div {
+button.fancy-button:hover .fancy-button-hover-effect div {
     width: 8rem;
     height: 8rem;
 }
 
 @keyframes effect {
-    to {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
         transform: rotate(360deg);
     }
 }
