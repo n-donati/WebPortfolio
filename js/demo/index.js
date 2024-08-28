@@ -1,17 +1,21 @@
 import { preloadImages } from '../utils.js';
 
+// Configuration
 const CONFIG = {
     LENIS: {
         lerp: 0.05,
         smoothWheel: true
     },
-    SCROLL_THRESHOLD: 100,
-    ANIMATION_DURATION: 2000,
-    AUTO_HIDE_DURATION: 5000
+    SCROLL: {
+        THRESHOLD: 100,
+        ANIMATION_DURATION: 2000,
+        AUTO_HIDE_DURATION: 5000
+    }
 };
 
+// DOM Elements
 const DOM = {
-    contentElements: [...document.querySelectorAll('.content--sticky')],
+    contentElements: Array.from(document.querySelectorAll('.content--sticky')),
     scrollAnimation: document.querySelector('.main__action'),
     contactForm: document.getElementById('contact-form'),
     loading: document.getElementById('loading'),
@@ -23,8 +27,10 @@ const DOM = {
     }
 };
 
+// Global variables
 let lenis;
 
+// Smooth Scrolling
 const initSmoothScrolling = () => {
     lenis = new Lenis(CONFIG.LENIS);
     lenis.on('scroll', ScrollTrigger.update);
@@ -36,6 +42,7 @@ const initSmoothScrolling = () => {
     requestAnimationFrame(raf);
 };
 
+// Scroll Animations
 const initScrollAnimations = () => {
     DOM.contentElements.forEach((el, index) => {
         const isLast = index === DOM.contentElements.length - 1;
@@ -53,33 +60,40 @@ const initScrollAnimations = () => {
             ease: 'none',
             yPercent: -50
         }, 0)
-        .fromTo(img, {
-            yPercent: 10,
-            rotation: 20,
-            scale: 0.9,
-            filter: 'contrast(130%)'
-        }, {
-            ease: 'none',
-            yPercent: -30,
-            rotation: 0,
-            scale: 1,
-            filter: 'contrast(100%)',
-            scrollTrigger: {
-                trigger: el,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-            }
-        }, 0);
+        .fromTo(img, 
+            {
+                yPercent: 10,
+                rotation: 20,
+                scale: 0.9,
+                filter: 'contrast(130%)'
+            }, 
+            {
+                ease: 'none',
+                yPercent: -30,
+                rotation: 0,
+                scale: 1,
+                filter: 'contrast(100%)',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            }, 0
+        );
     });
 };
 
+// Scroll Animation Visibility
 const handleScrollAnimationVisibility = () => {
-    window.addEventListener('scroll', () => {
-        DOM.scrollAnimation.style.opacity = window.scrollY > CONFIG.SCROLL_THRESHOLD ? '0' : '1';
-    });
+    const checkScroll = () => {
+        DOM.scrollAnimation.style.opacity = window.scrollY > CONFIG.SCROLL.THRESHOLD ? '0' : '1';
+    };
+
+    window.addEventListener('scroll', checkScroll);
 };
 
+// Slider Content Generation
 const generateSliderContent = (logos) => {
     return logos.concat(logos).map((logo, index) => `
         <div class="slide">
@@ -88,6 +102,7 @@ const generateSliderContent = (logos) => {
     `).join('');
 };
 
+// Slider Initialization
 const initSliders = () => {
     const logos1 = ["C.svg", "CPP.svg", "JS.svg", "PY.svg", "JAVA.svg", "TS.svg", "RUST.svg", "RUBY.svg", "SQL.svg", "GO.svg", "BASH.svg", "HTML.svg", "CSS.svg"];
     const logos2 = ["DJANGO.svg", "DOCKER.svg", "AWS.svg", "MYSQL.svg", "REACT.svg", "NEXT.svg", "VERCEL.svg", "POSTGRESQL.svg", "NODEJS.svg", "MONGODB.svg", "REDIS.svg", "FIREBASE.svg", "TAILWIND.svg"];
@@ -96,23 +111,27 @@ const initSliders = () => {
     DOM.sliders.slider2.innerHTML = generateSliderContent(logos2);
 };
 
+// Form Submission Handling
 const handleFormSubmission = (e) => {
     e.preventDefault();
     DOM.loading.style.display = 'flex';
 
+    // Simulate form submission (replace with actual API call)
     setTimeout(() => {
         DOM.loading.style.display = 'none';
         showSuccessMessage();
         e.target.reset();
-    }, CONFIG.ANIMATION_DURATION);
+    }, CONFIG.SCROLL.ANIMATION_DURATION);
 };
 
+// Success Message Display
 const showSuccessMessage = () => {
     DOM.successMessage.style.display = 'flex';
     setTimeout(() => DOM.successMessage.classList.add('show'), 10);
-    setTimeout(hideSuccessMessage, CONFIG.AUTO_HIDE_DURATION);
+    setTimeout(hideSuccessMessage, CONFIG.SCROLL.AUTO_HIDE_DURATION);
 };
 
+// Success Message Hide
 const hideSuccessMessage = () => {
     DOM.successMessage.classList.remove('show');
     DOM.successMessage.classList.add('hide');
@@ -122,6 +141,7 @@ const hideSuccessMessage = () => {
     }, 300);
 };
 
+// Initialization
 const init = () => {
     initSmoothScrolling();
     initScrollAnimations();
@@ -132,7 +152,15 @@ const init = () => {
     DOM.closeBtn.addEventListener('click', hideSuccessMessage);
 };
 
-preloadImages('.content__img').then(() => {
-    document.body.classList.remove('loading');
-    init();
-});
+// Start the application
+preloadImages('.content__img')
+    .then(() => {
+        document.body.classList.remove('loading');
+        init();
+    })
+    .catch(error => {
+        console.error('Failed to preload images:', error);
+        // Fallback initialization if image preloading fails
+        document.body.classList.remove('loading');
+        init();
+    });
