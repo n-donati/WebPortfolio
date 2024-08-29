@@ -639,6 +639,7 @@ i {
     align-self: flex-end;
     margin-top: auto;
     position: relative;
+    text-align: right;
     z-index: 1;
 }
 
