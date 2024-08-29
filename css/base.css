@@ -469,6 +469,44 @@ i {
     user-select: none;
 }
 
+.about-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: grayscale(50%);
+    opacity: 0.5;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    ),
+    linear-gradient(
+        to top,
+        transparent,
+        black 20%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    ),
+    linear-gradient(
+        to top,
+        transparent,
+        black 20%
+    );
+    mask-composite: intersect;
+    -webkit-mask-composite: source-over;
+}
+
 /* Logo Styles */
 .also-on,
 .logos {
@@ -1089,7 +1127,7 @@ i {
     overflow: hidden;
     border-radius: var(--button-border-radius);
     transition: all 0.02s;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--button-color);
     z-index: 0;
     box-shadow: var(--button-shadow);
