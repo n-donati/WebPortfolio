@@ -60,16 +60,12 @@
 		<script src="./js/demo/background.js"></script>
 		<div class="wrap">
             <section class="content content--sticky content--half bg-1">
+				<div id="sketch"></div>
 				<img class="content__img content__img--small" src="media/img/2.png" alt="About Me">
 				<h2 class="content__title"><i>About</i> Me</h2>
 				<p class="content__text text-meta" style="text-align: justify;">I'm a Software Engineer who crafts elegant solutions using diverse technologies. I've tackled complex challenges with global teams, consistently delivering exceptional results and striving to set new industry standards.</p>
-				<a href="media/NicolasDonati_CV.pdf" download="Nicolas_Donati_CV.pdf">
-					<button class="fancy-button">
-						Download CV
-						<div class="fancy-button-hover-effect">
-							<div></div>
-						</div>
-					</button>
+				<a href="media/NicolasDonati_CV.pdf" target="_blank" rel="noopener noreferrer">
+					<button class="cv-button">Open CV</button>
 				</a>
 				<img class="about-image" src="/media/img/wave.webp" alt="Background">
 			</section>
@@ -165,20 +161,20 @@
 			
             <section class="content content--sticky content--half bg-5">
 				<img class="content__img content__img--small" src="media/img/3.png" alt="Publications">
-				<h2 class="content__title"><i></i> Publications</h2>
+				<h2 class="content__title"><i>Publications</i></h2>
 				<p class="content__text text-meta">Each piece reflects my passion for technology and continuous learning.</p>
 				<ul class="publications-list">
 					<li class="publication-item">
 						<span class="publication-date">04 Apr 2024</span>
-						<a href="#" class="publication-title">Inversion of Control (IoC): Demystifying the Familiar Pattern</a>
+						<a href="#" class="publication-title">A Deep Dive into Transformer Architecture for NLP</a>
 					</li>
 					<li class="publication-item">
 						<span class="publication-date">09 Feb 2024</span>
-						<a href="#" class="publication-title">OAuth Terms Explained in One Sentence</a>
+						<a href="#" class="publication-title">Exploring the Frontiers of Self-Supervised Vision Models</a>
 					</li>
 					<li class="publication-item">
 						<span class="publication-date">15 Dec 2023</span>
-						<a href="#" class="publication-title">Scaling Cheer: A Deep Dive into the Architecture of Red Jingles AI Chatbot</a>
+						<a href="#" class="publication-title">Checkmate: The Evolution of Chess Engine AI</a>
 					</li>
 				</ul>
 			</section>
@@ -200,9 +196,9 @@
 						<textarea id="message" name="message" placeholder=" " required></textarea>
 						<label for="message">Your Message</label>
 					</div>
-					<button type="submit" class="fancy-button">
+					<button type="submit" class="form-button">
 						Send Message
-						<div class="fancy-button-hover-effect">
+						<div class="form-button-hover-effect">
 							<div></div>
 						</div>
 					</button>

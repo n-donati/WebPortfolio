@@ -10,7 +10,7 @@
     /* Typography */
     --font-size-base: 16px;
     --font-family-primary: "area-variable", sans-serif;
-    
+
     /* Colors */
     --color-text: #fff;
     --color-bg: #070707;
@@ -22,10 +22,10 @@
     --color-bg-4: var(--color-bg-2);
     --color-bg-5: var(--color-bg-1);
     --color-bg-6: var(--color-bg-2);
-    
+
     /* Layout */
     --page-padding: 1.5rem;
-    
+
     /* Transitions */
     --transition-default: 0.3s ease;
 }
@@ -89,46 +89,46 @@ body {
 }
 
 a {
-	text-decoration: none;
-	color: var(--color-link);
-	outline: none;
-	cursor: pointer;
+    text-decoration: none;
+    color: var(--color-link);
+    outline: none;
+    cursor: pointer;
 }
 
 a:hover {
-	color: var(--color-link-hover);
-	outline: none;
+    color: var(--color-link-hover);
+    outline: none;
 }
 
 /* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
 a:focus {
-	/* Provide a fallback style for browsers that don't support :focus-visible */
-	outline: none;
-	background: lightgrey;
+    /* Provide a fallback style for browsers that don't support :focus-visible */
+    outline: none;
+    background: lightgrey;
 }
 
 a:focus:not(:focus-visible) {
-	/* Remove the focus indicator on mouse-focus for browsers that do support :focus-visible */
-	background: transparent;
+    /* Remove the focus indicator on mouse-focus for browsers that do support :focus-visible */
+    background: transparent;
 }
 
 a:focus-visible {
-	/* Draw a very noticeable focus style for keyboard-focus on browsers that do support :focus-visible */
-	outline: 2px solid red;
-	background: transparent;
+    /* Draw a very noticeable focus style for keyboard-focus on browsers that do support :focus-visible */
+    outline: 2px solid red;
+    background: transparent;
 }
 
 .unbutton {
-	background: none;
-	border: 0;
-	padding: 0;
-	margin: 0;
-	font: inherit;
-	cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
 }
 
 .unbutton:focus {
-	outline: none;
+    outline: none;
 }
 
 /* Frame Styles */
@@ -195,7 +195,7 @@ a:focus-visible {
     grid-area: sponsor;
 }
 
-.frame__demos > span {
+.frame__demos>span {
     filter: invert(100%);
 }
 
@@ -305,12 +305,16 @@ i {
 }
 
 @keyframes shine {
-    0%, 10% {
+
+    0%,
+    10% {
         background-position: -200px;
     }
+
     20% {
         background-position: top left;
     }
+
     100% {
         background-position: 200px;
     }
@@ -477,34 +481,8 @@ i {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    filter: grayscale(50%);
-    opacity: 0.5;
-    mask-image: linear-gradient(
-        to right,
-        transparent,
-        black 10%,
-        black 90%,
-        transparent
-    ),
-    linear-gradient(
-        to top,
-        transparent,
-        black 20%
-    );
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent,
-        black 10%,
-        black 90%,
-        transparent
-    ),
-    linear-gradient(
-        to top,
-        transparent,
-        black 20%
-    );
-    mask-composite: intersect;
-    -webkit-mask-composite: source-over;
+    filter: grayscale(100%);
+    opacity: 0.1;
 }
 
 /* Logo Styles */
@@ -554,9 +532,12 @@ i {
 }
 
 @keyframes scroll-down {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(10px);
     }
@@ -723,6 +704,7 @@ i {
     from {
         transform: translateX(-1300px);
     }
+
     to {
         transform: translateX(0);
     }
@@ -839,11 +821,11 @@ i {
     font-weight: 600;
 }
 
-.project-cards > * {
+.project-cards>* {
     margin-bottom: 5px;
 }
 
-.project-cards > *:last-child {
+.project-cards>*:last-child {
     margin-bottom: 0;
 }
 
@@ -857,7 +839,6 @@ i {
 
 .publication-item {
     --publication-border-color: rgba(255, 255, 255, 0.1);
-    
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -985,10 +966,10 @@ i {
     background-color: var(--input-focus-bg-color);
 }
 
-.contact-form input:not(:placeholder-shown) + label,
-.contact-form textarea:not(:placeholder-shown) + label,
-.contact-form input:focus + label,
-.contact-form textarea:focus + label {
+.contact-form input:not(:placeholder-shown)+label,
+.contact-form textarea:not(:placeholder-shown)+label,
+.contact-form input:focus+label,
+.contact-form textarea:focus+label {
     top: -0.5rem;
     left: 0.5rem;
     font-size: 12px;
@@ -1030,7 +1011,7 @@ i {
     --success-bg: #1e1e1e;
     --success-color: white;
     --success-icon-color: #4CAF50;
-    
+
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -1092,6 +1073,7 @@ i {
         opacity: 0;
         transform: translateY(20px) scale(0.9);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1103,21 +1085,22 @@ i {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+
     100% {
         opacity: 0;
         transform: translateY(20px) scale(0.9);
     }
 }
 
-/* Fancy Button */
-.fancy-button {
+/* Buttons */
+.form-button {
     --button-bg: rgb(193, 228, 248);
     --button-color: rgb(14, 14, 14);
     --button-hover-color: rgb(255, 255, 255);
     --button-padding: 15px 30px;
     --button-border-radius: 10rem;
     --button-shadow: 0 0 7px -5px rgba(0, 0, 0, 0.5);
-    
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1136,17 +1119,17 @@ i {
     background: var(--button-bg);
 }
 
-.fancy-button:hover {
+.form-button:hover {
     transition: all 0.5s;
     background: rgba(193, 228, 248, 0);
     color: var(--button-hover-color);
 }
 
-.fancy-button:active {
+.form-button:active {
     transform: scale(0.97);
 }
 
-.fancy-button-hover-effect {
+.form-button-hover-effect {
     position: absolute;
     inset: 0;
     display: flex;
@@ -1155,7 +1138,7 @@ i {
     z-index: -1;
 }
 
-.fancy-button-hover-effect div {
+.form-button-hover-effect div {
     background: linear-gradient(90deg, rgba(222, 0, 75, 1) 0%, rgba(191, 70, 255, 1) 49%, rgba(0, 212, 255, 1) 100%);
     border-radius: 40rem;
     width: 10rem;
@@ -1166,7 +1149,7 @@ i {
     opacity: 0.5;
 }
 
-.fancy-button:hover .fancy-button-hover-effect div {
+.form-button:hover .form-button-hover-effect div {
     width: 8rem;
     height: 8rem;
 }
@@ -1175,9 +1158,77 @@ i {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
+}
+
+.cv-button {
+    padding: 10px 40px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0, .8, .26, .99);
+}
+
+.cv-button:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+    z-index: -1;
+    background-color: #333 !important;
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.cv-button:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+}
+
+.cv-button:hover:before {
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.cv-button:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.cv-button:active {
+    transform: translateY(4px);
+}
+
+.cv-button:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 }
 
 /* Media Queries */
@@ -1191,7 +1242,7 @@ i {
         grid-template-columns: auto auto auto 1fr 1fr;
         grid-template-rows: auto 1fr auto;
         align-content: space-between;
-        grid-template-areas: 
+        grid-template-areas:
             'title back prev sub sponsor'
             'heading heading heading heading heading'
             'demos demos demos demos demos';
