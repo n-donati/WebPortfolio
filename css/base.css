@@ -1231,6 +1231,32 @@ i {
     box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 }
 
+/* Dots Styling */
+.see-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+
+}
+
+.dots-container {
+    gap: 8px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.dots-container:hover {
+    transform: translateY(-2px);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
 /* Media Queries */
 @media screen and (min-width: 63em) {
     :root {

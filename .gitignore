@@ -1,5 +1,6 @@
 node_modules
 .cache
+.DS_Store
 .parcel-cache
 .vscode
 package-lock.json
